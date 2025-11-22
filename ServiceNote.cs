@@ -134,6 +134,11 @@ namespace WpfApp2
         }
         public void WriteNotesInFile()
         {
+            // Создать файл если не существует
+            if (!File.Exists(pathFile))
+            {
+                File.WriteAllText(pathFile, "");
+            }
             List<string> lines = new List<string>();
             if (File.Exists(pathFile))
             {
@@ -149,3 +154,4 @@ namespace WpfApp2
         }
     }
 }
+
